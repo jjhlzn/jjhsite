@@ -4,27 +4,103 @@ title:  "接口"
 date:   2016-05-01 15:15:09 +0800
 categories: jekyll update
 ---
- 
 
+重要点
+---
+
+每个接口的请求体都是一个json字符串，例如：
+   {% highlight json %}
+｛
+   "userInfo": {
+                 token = "",
+                 userid = ""},
+   "client": {
+                 appversion = "1.0.3",
+                 model = "iPhone6s",
+                 osversion = "9.3",
+                 platform = "iPhone",
+                 screensize = "375*667"}, 
+   "request": {
+                 password = "123456",
+                 username = "13706794299"}
+ }
+   {% endhighlight %}
+每个请求体都会包含userInfo和client，分别表示用户信息和客户端信息，后面的接口就不重复出现了。
+每个接口的响应都会包含status和errorMessage字段，表示响应的代码和错误消息。status = 0 表示请求成功，其他值表示出错的情况，例如-1表示出现异常，-10表示用户权限问题。
+
+登录
+===
+
+1. URL: http://localhost:3000/user/login
+2. 请求体
+   {% highlight json %}
+	｛"request": {
+	    password = fsdf;
+	    username = "favorited add";
+	  }}
+   {% endhighlight  %}
+3. 响应
+   {% highlight json %}
+	{
+	    errorMessage = "";
+	    name = test;
+	    status = 0;
+	    token = fsdfsdfsfdsfsf;
+	}
+  {% endhighlight  %}
+  
+  
+获取手机验证码
+===
+
+1. URL: http://localhost:3000/user/getPhoneCheckCode
+2. 请求体
+{% highlight json %}
+{"request": {
+    phoneNumber = 13706794299;
+}}
+{% endhighlight %}
+
+3. 响应
+{% highlight json %}
+{
+    errorMessage = "";
+    status = 0;
+}
+{% endhighlight%}
+
+注册
+===
+
+1. URL: http://localhost:3000/user/signup
+2. 请求体
+ {% highlight json %}
+{ "request": {
+    checkCode = 123456;
+    invitePhone = 12345678900;
+    password = 123456;
+    phoneNumber = 13706794299;
+}}
+ {% endhighlight %}
+
+3. 响应
+  {% highlight json %}
+  {
+      errorMessage = "";
+      status = 0;
+  }
+  {% endhighlight %}
+  
 获取课程列表
 ===
 
 1. URL:  http://jjhaudio.hengdianworld.com:80/album/songs
 2. 请求体
    {% highlight json %}
-   {"userInfo": {
-       token = "";
-       userid = "";
-   }, "request": {
+   {"request": {
        type = 'common';
    	   pageno = 0,
    	   pagesize = 15
-   }, "client": {
-       appversion = "1.0.3";
-       model = 'iPhone5';
-       osversion = "9.3.1";
-       platform = 'iphone';
-       screensize = "320.0*568.0";
    }}
    {% endhighlight  %}
 3. 响应
@@ -71,19 +147,10 @@ categories: jekyll update
 1. URL:  http://jjhaudio.hengdianworld.com:80/album/songs
 2. 请求体
    {% highlight json %}
-｛"userInfo": {
-    token = "";
-    userid = "";
-}, "request": {
+｛"request": {
     album = "{'id': 8}";
 	pageno = 0,
 	pagesize = 15
-}, "client": {
-    appversion = "1.0.3";
-    model = iPhone;
-    osversion = "9.3.1";
-    platform = iphone;
-    screensize = "320.0*568.0";
 }｝
 {% endhighlight  %}
 
@@ -123,19 +190,10 @@ categories: jekyll update
 1. URL:  http://jjhaudio.hengdianworld.com:80/song/comments
 2. 请求体
    {% highlight json %}
-｛"userInfo": {
-    token = "";
-    userid = "";
-}, "request": {
+｛"request": {
     song = "{'id': 8}",
 	pageno = 0,
 	pagesize = 15
-}, "client": {
-    appversion = "1.0.3";
-    model = iPhone;
-    osversion = "9.3.1";
-    platform = iphone;
-    screensize = "320.0*568.0";
 }｝
 {% endhighlight  %}
 
