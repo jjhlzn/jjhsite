@@ -307,8 +307,8 @@ categories: jekyll update
 2. 请求体
    {% highlight javascript %}
 {
-        "request": {
-            song = "{'id': 8}",
+        request: {
+            song = {id: 8},
             lastId = 10  //lastId表示上次获得的最新的聊天记录id, -1表示第一次请求
         }
 }
@@ -327,18 +327,14 @@ categories: jekyll update
                id = 1;
                time = "1小时前";
                userId = "jjh";
+               isManager = false   //是否是管理员
            },
            {
-               content = "test";
-               id = 2;
-               time = "1分钟前";
-               userId = "test";
-           },
-          {
-               content = "test";
-               id = 3;
-               time = "刚刚";
-               userId = "who";
+               content = "test",
+               id = 2,
+               time = "1分钟前",
+               userId = "test",
+               isManager = true
            }
        ];
    }
@@ -353,7 +349,8 @@ categories: jekyll update
    {% highlight javascript %}
 {
     "request": {
-        comment = Rwerewr
+        comment = 'test',
+        song: {id:  120}
     }
 }
 {% endhighlight  %}
@@ -376,7 +373,7 @@ categories: jekyll update
    {% highlight javascript %}
 {
     "request": {
-        comment = Rwerewr
+        song = "{'id': 8}"
     }
 }
 {% endhighlight  %}
