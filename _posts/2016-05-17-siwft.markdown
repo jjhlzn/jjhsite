@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "Swift知识点"
+date:   2016-05-01 15:15:09 +0800
+categories: jekyll update
+---
+
+
+时间
+===
+
+* 时间格式化
+{% highlight swift %}
+let formatter = NSDateFormatter()
+formatter.dateFormat = "yyyy-MM-dd"
+let currentDateTime = NSDate()
+let dateString = formatter.stringFromDate(oneMonthAgo)
+{% endhighlight %}
+
+
+* 计算时间差
+{% highlight swift %}
+let elapsedTime = NSDate().timeIntervalSinceDate(startTime)
+let duration = Int(elapsedTime)
+{% endhighlight %}
+
+
+* 定时器
+{% highlight swift %}
+let timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, 
+            selector: "updateButtonTitle", userInfo: nil, repeats: true)
+{% endhighlight %}
+1表示每隔1秒调用selector
+
+字符串
+===
+
+* 获取子串
+
+
+
