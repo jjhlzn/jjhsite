@@ -117,6 +117,50 @@ categories: jekyll update
   }
   {% endhighlight %}
   
+5)重设密码（登录之后，提供原密码）
+===
+
+1. URL: http://localhost:3000/user/resetPassword
+2. 请求体
+ {% highlight javascript %}
+{ 
+    "request": {
+        oldPassword = "123456",
+        newPassword = "xxxxx"
+    }
+}
+ {% endhighlight %}
+
+3. 响应
+  {% highlight javascript %}
+  {
+      errorMessage = "";
+      status = 0;
+  }
+  {% endhighlight %}
+  
+  
+5)获取推荐人数
+===
+
+1. URL: http://localhost:3000/user/getClientNumber
+2. 请求体
+ {% highlight javascript %}
+{ 
+    "request": {
+    }
+}
+ {% endhighlight %}
+
+3. 响应
+  {% highlight javascript %}
+  {
+      errorMessage = "";
+      status = 0;
+      peopleCount = 120
+  }
+  {% endhighlight %}
+  
 5)获取课程列表
 ===
 
@@ -165,6 +209,54 @@ categories: jekyll update
    }
    {% endhighlight  %}
    
+   
+6) 查找课程
+===   
+
+1. URL:  http://jjhaudio.hengdianworld.com:80/album/search
+2. 请求体
+   {% highlight javascript %}
+｛
+    "request": {
+        keyword = 'test',
+	    pageno = 0,
+	    pagesize = 15 }
+ ｝
+{% endhighlight  %}
+
+3. 响应
+
+   {% highlight javascript %}
+   {
+       albums =  [{
+                       author = "Avril Lavigne";
+                       count = "50";
+                       id = "1";
+                       image = "http://jjhaudio.hengdianworld.com/images/default.png";
+                       listenCount = "1000";
+                       name = "test";
+                       type = Common; },
+                   {
+                       author = "test1";
+                       count = "32";
+                       id = "2";
+                       image = "http://jjhaudio.hengdianworld.com/images/yuantengfei.jpg";
+                       listenCount = "10";
+                       name = "test1";
+                       type = 'Common'; },
+                   {
+                       author = "test2";
+                       count = "10";
+                       id = "3";
+                       image = "http://jjhaudio.hengdianworld.com/images/default.png";
+                       listenCount = "19";
+                       name = "test2";
+                       type = 'Common';}],
+       errorMessage = "",
+       status = 0,
+       totalNumber = 20
+   }
+   {% endhighlight  %}
    
 6)获取课程的课的列表
 ===
@@ -341,7 +433,7 @@ categories: jekyll update
    {% endhighlight  %}
    
    
-8)发送评论
+9)发送评论
 ===
 
 1. URL:  http://localhost:3000/comment/add
@@ -365,7 +457,7 @@ categories: jekyll update
    {% endhighlight  %}
    
    
-9)获取在线人数
+10)获取在线人数
 ===
 
 1. URL:  http://localhost:3000/song/livelistener
