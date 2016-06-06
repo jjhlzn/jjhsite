@@ -50,6 +50,24 @@ categories: jekyll update
     }
   {% endhighlight  %}
   
+1)退出登录
+===
+
+1. URL: http://localhost:3000/user/logout
+2. 请求体
+   {% highlight javascript %}
+   {
+       "request": {}
+   }
+   {% endhighlight  %}
+3. 响应
+   {% highlight javascript %}
+    {
+        status = 0;
+        errorMessage = "";
+    }
+  {% endhighlight  %}
+  
   
 2)获取手机验证码
 ===
@@ -258,6 +276,27 @@ categories: jekyll update
    }
    {% endhighlight  %}
    
+   
+6)获取当前热门关键字
+===
+
+1. URL:  http://jjhaudio.hengdianworld.com:80/album/getHotSearchWords
+2.    请求体
+ {% highlight javascript %}
+｛  
+    "request": {}
+ ｝
+{% endhighlight  %}
+
+3. 响应
+   {% highlight javascript %}
+   {
+       keywords =  ["aa", "bb", "cc"],
+       errorMessage = "",
+       status = 0
+   }
+   {% endhighlight  %}
+   
 6)获取课程的课的列表
 ===
 
@@ -279,11 +318,12 @@ categories: jekyll update
    settings表示每节课的配置，canComment表示是否能评论，maxCommentWord表示能够评论的字数
    {% highlight javascript %}
    {
-       albums =  [{
+       songs =  [{
                        author = "Avril Lavigne";
                        count = "50";
                        id = "1";
                        image = "http://jjhaudio.hengdianworld.com/images/default.png";
+                       url = "http://jjhaudio.hengdianworld.com/xx.mp3",
                        listenCount = "1000";
                        name = "test";
                        settings =  {
@@ -300,6 +340,7 @@ categories: jekyll update
                                        maxCommentWord = 20;
                                    };
                        image = "http://jjhaudio.hengdianworld.com/images/yuantengfei.jpg";
+                       url = "http://jjhaudio.hengdianworld.com/xx.mp3",
                        listenCount = "10";
                        name = "test1";
                        type = 'Common'; },
@@ -312,6 +353,7 @@ categories: jekyll update
                                        maxCommentWord = 20;
                                    };
                        image = "http://jjhaudio.hengdianworld.com/images/default.png";
+                       url = "http://jjhaudio.hengdianworld.com/xx.mp3",
                        listenCount = "19";
                        name = "test2";
                        type = 'Common';}],
@@ -331,6 +373,7 @@ categories: jekyll update
                        count = "50";
                        id = "1";
                        image = "http://jjhaudio.hengdianworld.com/images/default.png";
+                       url = "http://jjhaudio.hengdianworld.com/xx.mp3",
                        listenCount = "1000";
                        name = "test";
                        settings =  {
