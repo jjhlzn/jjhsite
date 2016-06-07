@@ -28,6 +28,28 @@ categories: jekyll update
 每个请求体都会包含userInfo和client，分别表示用户信息和客户端信息，后面的接口就不重复出现了。
 每个接口的响应都会包含status和errorMessage字段，表示响应的代码和错误消息。status = 0 表示请求成功，其他值表示出错的情况，例如-1表示出现异常，-10表示用户权限问题。
 
+0)版本更新检查
+===
+
+1. URL: http://localhost:3000/app/checkUpgrade
+2. 请求体
+   {% highlight javascript %}
+   {
+       "request": {}
+    }
+   {% endhighlight  %}
+3. 响应
+   {% highlight javascript %}
+    {
+        status = 0;
+        errorMessage = "",
+        newestVersion: '1.0.1',   //最新版本号
+        isNeedUpgrade: true,  //是否需要更新
+        upgradeType: 'optional', //升级类型 optional表示可选升级，force表示强制升级
+        upgradeUrl: 'http://www.baidu.com'   //升级url
+    }
+  {% endhighlight  %}
+
 1)登录
 ===
 
