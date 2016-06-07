@@ -72,7 +72,7 @@ categories: jekyll update
     }
   {% endhighlight  %}
   
-1)退出登录
+2)退出登录
 ===
 
 1. URL: http://localhost:3000/user/logout
@@ -91,7 +91,7 @@ categories: jekyll update
   {% endhighlight  %}
   
   
-2)获取手机验证码
+3)获取手机验证码
 ===
 
 1. URL: http://localhost:3000/user/getPhoneCheckCode
@@ -111,7 +111,7 @@ categories: jekyll update
 }
 {% endhighlight%}
 
-3)注册
+4)注册
 ===
 
 1. URL: http://localhost:3000/user/signup
@@ -134,7 +134,7 @@ categories: jekyll update
   }
   {% endhighlight %}
   
-4)重设密码（通过验证码）
+5)重设密码（通过验证码）
 ===
 
 1. URL: http://localhost:3000/user/getPassword
@@ -157,7 +157,7 @@ categories: jekyll update
   }
   {% endhighlight %}
   
-5)重设密码（登录之后，提供原密码）
+6)重设密码（登录之后，提供原密码）
 ===
 
 1. URL: http://localhost:3000/user/resetPassword
@@ -180,7 +180,7 @@ categories: jekyll update
   {% endhighlight %}
   
   
-5)获取推荐人数
+7)获取推荐人数
 ===
 
 1. URL: http://localhost:3000/user/getClientNumber
@@ -201,7 +201,7 @@ categories: jekyll update
   }
   {% endhighlight %}
   
-5)获取课程列表
+8)获取课程列表
 ===
 
 1. URL:  http://jjhaudio.hengdianworld.com:80/album/songs
@@ -221,24 +221,24 @@ categories: jekyll update
    {
        albums =  [{
                        author = "Avril Lavigne";
-                       count = "50";
-                       id = "1";
+                       count = 50，
+                       id = 1;
                        image = "http://jjhaudio.hengdianworld.com/images/default.png";
                        listenCount = "1000";
                        name = "test";
                        type = Common; },
                    {
                        author = "test1";
-                       count = "32";
-                       id = "2";
+                       count = 2;
+                       id = 2;
                        image = "http://jjhaudio.hengdianworld.com/images/yuantengfei.jpg";
                        listenCount = "10";
                        name = "test1";
                        type = 'Common'; },
                    {
                        author = "test2";
-                       count = "10";
-                       id = "3";
+                       count = 10,
+                       id = 3,
                        image = "http://jjhaudio.hengdianworld.com/images/default.png";
                        listenCount = "19";
                        name = "test2";
@@ -250,7 +250,7 @@ categories: jekyll update
    {% endhighlight  %}
    
    
-6) 查找课程
+9) 查找课程
 ===   
 
 1. URL:  http://jjhaudio.hengdianworld.com:80/album/search
@@ -299,7 +299,7 @@ categories: jekyll update
    {% endhighlight  %}
    
    
-6)获取当前热门关键字
+10)获取当前热门关键字
 ===
 
 1. URL:  http://jjhaudio.hengdianworld.com:80/album/getHotSearchWords
@@ -319,7 +319,7 @@ categories: jekyll update
    }
    {% endhighlight  %}
    
-6)获取课程的课的列表
+11)获取课程的课的列表
 ===
 
 1. URL:  http://jjhaudio.hengdianworld.com:80/album/songs
@@ -412,7 +412,7 @@ categories: jekyll update
    {% endhighlight  %}
    
    
-7)获取评论
+12)获取评论
 ===
 
 1. URL:  http://jjhaudio.hengdianworld.com:80/song/comments
@@ -436,7 +436,7 @@ categories: jekyll update
        comments =  [
           {
                content = "test";
-               id = 1;
+               id = 1;  //Int类型
                time = "1小时前";
                userId = "jjh";
            },
@@ -457,7 +457,7 @@ categories: jekyll update
    {% endhighlight  %}
 
 
-8)获取实时在线聊天记录
+13)获取实时在线聊天记录
 ===
 
 1. URL:  http://jjhaudio.hengdianworld.com:80/song/livecomments
@@ -481,7 +481,7 @@ categories: jekyll update
        comments =  [
           {
                content = "test";
-               id = 1;
+               id = 1; //Int类型
                time = "1小时前";
                userId = "jjh";
                isManager = false   //是否是管理员
@@ -498,7 +498,7 @@ categories: jekyll update
    {% endhighlight  %}
    
    
-9)发送评论
+14)发送评论
 ===
 
 1. URL:  http://localhost:3000/comment/add
@@ -522,7 +522,7 @@ categories: jekyll update
    {% endhighlight  %}
    
    
-10)获取在线人数
+16)获取在线人数
 ===
 
 1. URL:  http://localhost:3000/song/livelistener
@@ -530,7 +530,7 @@ categories: jekyll update
    {% highlight javascript %}
 {
     "request": {
-        song = "{'id': 8}"
+        song = "{'id': 8}"   
     }
 }
 {% endhighlight  %}
@@ -539,8 +539,8 @@ categories: jekyll update
    {% highlight javascript %}
 {
     errorMessage = "";
-    status = 0;
-    listerCount = 1000
+    status = 0; 
+    listerCount = 1000  //Int类型
 }
 
    {% endhighlight  %}
