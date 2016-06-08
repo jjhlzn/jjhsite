@@ -49,8 +49,56 @@ categories: jekyll update
         upgradeUrl: 'http://www.baidu.com'   //升级url
     }
   {% endhighlight  %}
+  
+ 
+1)获取广告
+===
 
-1)登录
+1. URL: http://localhost:3000/app/getAds
+2. 请求体
+   {% highlight javascript %}
+   {
+       "request": {}
+    }
+   {% endhighlight  %}
+3. 响应
+   {% highlight javascript %}
+    {
+        status = 0;
+        errorMessage = "",
+        ads: [
+                {imageUrl: "http://img.weiphone.net/1/h061/h23/bc9c8fe1img201606071030220_306__220.jpg",
+                 clickUrl: "http://www.baidu.com", 
+                 title: "信用卡活动"},
+                {imageUrl: "http://img.weiphone.net/1/h061/h23/bc9c8fe1img201606071030220_306__220.jpg",
+                 clickUrl: "http://www.baidu.com", 
+                 title: "信用卡活动"}
+             ]
+    }
+  {% endhighlight  %}
+  
+2)注册DeviceToken(用于通知推送)
+===
+
+1. URL: http://localhost:3000/app/registerDevice
+2. 请求体
+   {% highlight javascript %}
+   {
+       "request": {
+           deviceToken: "fdsfsdfsdfsfsdfsdf"
+       }
+    }
+   {% endhighlight  %}
+3. 响应
+   {% highlight javascript %}
+    {
+        status = 0;
+        errorMessage = ""
+    }
+  {% endhighlight  %}
+    
+
+3)登录
 ===
 
 1. URL: http://localhost:3000/user/login
@@ -59,7 +107,9 @@ categories: jekyll update
    {
        "request": {
              username = "13706794290",
-             password = "123456"}
+             password = "123456",
+             deviceToken = "fsdfsdfsdfsdfsdfdsfsdfdsf" 
+         }
     }
    {% endhighlight  %}
 3. 响应
@@ -68,11 +118,13 @@ categories: jekyll update
         status = 0;
         errorMessage = "";
         name = "jjh";
+        sex = "男",  //男  或  女  或 保密
+        codeImageUrl: "http://www.baidu.com/image.png",
         token = "1234567890abcdefghijklmn";
     }
   {% endhighlight  %}
   
-2)退出登录
+4)退出登录
 ===
 
 1. URL: http://localhost:3000/user/logout
@@ -90,8 +142,48 @@ categories: jekyll update
     }
   {% endhighlight  %}
   
+5)设置姓名
+===
+
+1. URL: http://localhost:3000/user/setName
+2. 请求体
+   {% highlight javascript %}
+   {
+       "request": {
+           newName: 'jjh'
+       }
+   }
+   {% endhighlight  %}
+3. 响应
+   {% highlight javascript %}
+    {
+        status = 0;
+        errorMessage = "";
+    }
+  {% endhighlight  %}
   
-3)获取手机验证码
+6)设置性别
+===
+
+1. URL: http://localhost:3000/user/setSex
+2. 请求体
+   {% highlight javascript %}
+   {
+       "request": {
+           newSex: '男'
+       }
+   }
+   {% endhighlight  %}
+3. 响应
+   {% highlight javascript %}
+    {
+        status = 0;
+        errorMessage = "";
+    }
+  {% endhighlight  %}
+  
+  
+7)获取手机验证码
 ===
 
 1. URL: http://localhost:3000/user/getPhoneCheckCode
@@ -111,7 +203,7 @@ categories: jekyll update
 }
 {% endhighlight%}
 
-4)注册
+8)注册
 ===
 
 1. URL: http://localhost:3000/user/signup
@@ -134,7 +226,7 @@ categories: jekyll update
   }
   {% endhighlight %}
   
-5)重设密码（通过验证码）
+9)重设密码（通过验证码）
 ===
 
 1. URL: http://localhost:3000/user/getPassword
@@ -157,7 +249,7 @@ categories: jekyll update
   }
   {% endhighlight %}
   
-6)重设密码（登录之后，提供原密码）
+10)重设密码（登录之后，提供原密码）
 ===
 
 1. URL: http://localhost:3000/user/resetPassword
@@ -180,7 +272,7 @@ categories: jekyll update
   {% endhighlight %}
   
   
-7)获取推荐人数
+11)获取推荐人数
 ===
 
 1. URL: http://localhost:3000/user/getClientNumber
@@ -201,7 +293,7 @@ categories: jekyll update
   }
   {% endhighlight %}
   
-8)获取课程列表
+12)获取课程列表
 ===
 
 1. URL:  http://jjhaudio.hengdianworld.com:80/album/songs
@@ -250,7 +342,7 @@ categories: jekyll update
    {% endhighlight  %}
    
    
-9) 查找课程
+13) 查找课程
 ===   
 
 1. URL:  http://jjhaudio.hengdianworld.com:80/album/search
@@ -299,7 +391,7 @@ categories: jekyll update
    {% endhighlight  %}
    
    
-10)获取当前热门关键字
+14)获取当前热门关键字
 ===
 
 1. URL:  http://jjhaudio.hengdianworld.com:80/album/getHotSearchWords
@@ -319,7 +411,7 @@ categories: jekyll update
    }
    {% endhighlight  %}
    
-11)获取课程的课的列表
+15)获取课程的课的列表
 ===
 
 1. URL:  http://jjhaudio.hengdianworld.com:80/album/songs
@@ -412,7 +504,7 @@ categories: jekyll update
    {% endhighlight  %}
    
    
-12)获取评论
+16)获取评论
 ===
 
 1. URL:  http://jjhaudio.hengdianworld.com:80/song/comments
@@ -457,7 +549,7 @@ categories: jekyll update
    {% endhighlight  %}
 
 
-13)获取实时在线聊天记录
+17)获取实时在线聊天记录
 ===
 
 1. URL:  http://jjhaudio.hengdianworld.com:80/song/livecomments
@@ -498,7 +590,7 @@ categories: jekyll update
    {% endhighlight  %}
    
    
-14)发送评论
+18)发送评论
 ===
 
 1. URL:  http://localhost:3000/comment/add
@@ -522,7 +614,7 @@ categories: jekyll update
    {% endhighlight  %}
    
    
-16)获取在线人数
+19)获取在线人数
 ===
 
 1. URL:  http://localhost:3000/song/livelistener
