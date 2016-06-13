@@ -124,6 +124,34 @@ categories: jekyll update
     }
   {% endhighlight  %}
   
+  
+
+3)更新权限token
+===
+
+1. URL: http://localhost:3000/user/updatetoken
+2. 请求体
+   {% highlight javascript %}
+   {
+       "request": {
+             username = "13706794290",
+             password = "123456",
+         }
+    }
+   {% endhighlight  %}
+3. 响应
+   {% highlight javascript %}
+    {
+        status = 0;
+        errorMessage = "";
+        name = "jjh";
+        sex = "男",  //男  或  女  或 保密
+        codeImageUrl: "http://www.baidu.com/image.png",
+        token = "1234567890abcdefghijklmn";
+    }
+  {% endhighlight  %}
+
+  
 4)退出登录
 ===
 
@@ -315,6 +343,7 @@ categories: jekyll update
                        author = "Avril Lavigne";
                        count = 50，
                        id = 1;
+                       desc: 'desc',
                        image = "http://jjhaudio.hengdianworld.com/images/default.png";
                        listenCount = "1000";
                        name = "test";
@@ -323,6 +352,7 @@ categories: jekyll update
                        author = "test1";
                        count = 2;
                        id = 2;
+                       desc: 'desc',
                        image = "http://jjhaudio.hengdianworld.com/images/yuantengfei.jpg";
                        listenCount = "10";
                        name = "test1";
@@ -331,6 +361,7 @@ categories: jekyll update
                        author = "test2";
                        count = 10,
                        id = 3,
+                       desc: 'desc',
                        image = "http://jjhaudio.hengdianworld.com/images/default.png";
                        listenCount = "19";
                        name = "test2";
@@ -364,6 +395,7 @@ categories: jekyll update
                        author = "Avril Lavigne";
                        count = "50";
                        id = "1";
+                       desc: 'desc',
                        image = "http://jjhaudio.hengdianworld.com/images/default.png";
                        listenCount = "1000";
                        name = "test";
@@ -372,6 +404,7 @@ categories: jekyll update
                        author = "test1";
                        count = "32";
                        id = "2";
+                       desc: 'desc',
                        image = "http://jjhaudio.hengdianworld.com/images/yuantengfei.jpg";
                        listenCount = "10";
                        name = "test1";
@@ -380,6 +413,7 @@ categories: jekyll update
                        author = "test2";
                        count = "10";
                        id = "3";
+                       desc: 'desc',
                        image = "http://jjhaudio.hengdianworld.com/images/default.png";
                        listenCount = "19";
                        name = "test2";
