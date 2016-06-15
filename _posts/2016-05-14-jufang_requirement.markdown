@@ -647,6 +647,47 @@ categories: jekyll update
 
    {% endhighlight  %}
    
+18)发送在线评论
+===
+
+1. URL:  http://localhost:3000/comment/addLive
+2. 请求体
+   {% highlight javascript %}
+{
+    "request": {
+        comment = 'test',
+        lastId = '100'
+        song: {id:  120}
+    }
+}
+{% endhighlight  %}
+
+3. 响应
+   {% highlight javascript %}
+{
+    errorMessage = "";
+    status = 0;
+    comments =  [
+       {
+            content = "test";
+            id = 1; //Int类型
+            time = "1小时前";
+            userId = "jjh";
+            isManager = false   //是否是管理员
+        },
+        {
+            content = "test",
+            id = 2,
+            time = "1分钟前",
+            userId = "test",
+            isManager = true
+        }
+    ];
+}
+
+   {% endhighlight  %}
+   
+   
    
 19)获取在线人数
 ===
