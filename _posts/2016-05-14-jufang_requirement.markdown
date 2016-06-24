@@ -474,6 +474,7 @@ categories: jekyll update
                        url = "http://jjhaudio.hengdianworld.com/xx.mp3",
                        listenCount = "1000";
                        name = "test";
+                       listenPeople: "1100人"，
                        settings =  {
                                        canComment = true; 
                                        maxCommentWord = 20;
@@ -491,6 +492,7 @@ categories: jekyll update
                        url = "http://jjhaudio.hengdianworld.com/xx.mp3",
                        listenCount = "10";
                        name = "test1";
+                       listenPeople: "1100人"，
                        type = 'Common'; },
                    {
                        author = "test2";
@@ -504,6 +506,7 @@ categories: jekyll update
                        url = "http://jjhaudio.hengdianworld.com/xx.mp3",
                        listenCount = "19";
                        name = "test2";
+                       listenPeople: "1100人"，
                        type = 'Common';}],
        errorMessage = "",
        status = 0,
@@ -524,6 +527,7 @@ categories: jekyll update
                        url = "http://jjhaudio.hengdianworld.com/xx.mp3",
                        listenCount = "1000";
                        name = "test";
+                       listenPeople: "1100人"，
                        settings =  {
                                        canComment = true; 
                                        maxCommentWord = 20;
