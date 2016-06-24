@@ -569,18 +569,21 @@ categories: jekyll update
                id = 1;  //Int类型
                time = "1小时前";
                userId = "jjh";
+               name="张三"
            },
            {
                content = "test";
                id = 2;
                time = "1分钟前";
                userId = "test";
+               name="张三"
            },
           {
                content = "test";
                id = 3;
                time = "刚刚";
                userId = "who";
+               name="张三"
            }
        ];
    }
@@ -716,5 +719,30 @@ categories: jekyll update
 
    {% endhighlight  %}
    
+20）上传用户图片
+===
+
+上传图片的请求参数和其他请求不同，请求不放在json中，把userid和token放在POST参数中，图片参数名为userimage。服务器响应和其他请求保持一致即可
+
+1. URL:  http://localhost:3000/user/uploadprofileimage
+2. 请求体
+
+3. 响应
+   {% highlight javascript %}
+{
+    errorMessage = "";
+    status = 0; 
+}
+   {% endhighlight  %}
 
 
+21）获取用户的头像图片
+===
+
+请求参数不放在json中，放在queryString中，userid=xxx。返回图片
+
+1. URL:  http://localhost:3000/user/getprofileimage?userid=xxxxxx
+2. 请求体
+
+3. 响应
+    响应而其他请求不同，响应体为图片，注意ContentType设置。
