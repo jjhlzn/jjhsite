@@ -145,6 +145,9 @@ categories: jekyll update
         status = 0;
         errorMessage = "";
         name = "jjh";
+        nickname = "jjh",
+        level = "vip",
+        boss = "lzn",
         sex = "男",  //男  或  女  或 保密
         codeImageUrl: "http://www.baidu.com/image.png",
         token = "1234567890abcdefghijklmn";
@@ -745,4 +748,29 @@ categories: jekyll update
 2. 请求体
 
 3. 响应
-    响应而其他请求不同，响应体为图片，注意ContentType设置。
+
+    响应和其他请求不同，响应体为图片，注意ContentType设置。
+
+22)获取用户相关统计数据
+===
+
+1. URL:  http://localhost:3000/use/getstatdata
+2. 请求体
+   {% highlight javascript %}
+{
+}
+{% endhighlight  %}
+
+3. 响应
+   {% highlight javascript %}
+{
+    errorMessage = "";
+    status = 0; 
+    jifen = "1000", 
+    chaifu = "1000",
+    teamPeople = "12人",
+    tuijianPeople = " 100人",
+    orderCount = "10笔"
+}
+
+   {% endhighlight  %}
