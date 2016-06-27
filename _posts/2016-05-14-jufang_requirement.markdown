@@ -774,3 +774,24 @@ categories: jekyll update
 }
 
    {% endhighlight  %}
+
+
+23)设置昵称
+===
+
+1. URL: http://localhost:3000/user/setnickname
+2. 请求体
+   {% highlight javascript %}
+   {
+       "request": {
+           newNickName: 'jjh'
+       }
+   }
+   {% endhighlight  %}
+3. 响应
+   {% highlight javascript %}
+    {
+        status = 0;
+        errorMessage = "";
+    }
+  {% endhighlight  %}
