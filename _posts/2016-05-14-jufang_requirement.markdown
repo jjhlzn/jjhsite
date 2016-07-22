@@ -464,7 +464,7 @@ categories: jekyll update
 
 3. 响应
    
-   a) 往期课程和VIP课程的response
+   a) 往期课程response
    
    settings表示每节课的配置，canComment表示是否能评论，maxCommentWord表示能够评论的字数
    {% highlight javascript %}
@@ -535,6 +535,9 @@ categories: jekyll update
                                        canComment = true; 
                                        maxCommentWord = 20;
                                     }，
+                       hasAdvImage: true,
+                       advImageUrl: "http://jjhaudio.hengdianworld.com/images/default.png",
+                       advUrl: "http://www.baidu.com",
                        startTime = "2016-05-19 13:00:00"，
                        endTime = "2016-05-19 17:00:00"，
                        type = Live; }
@@ -791,6 +794,47 @@ categories: jekyll update
 3. 响应
    {% highlight javascript %}
     {
+        status = 0;
+        errorMessage = "";
+    }
+  {% endhighlight  %}
+
+
+24)获取歌曲的信息
+===
+
+1. URL: http://localhost:3000/song/getsonginfo
+2. 请求体
+   {% highlight javascript %}
+   {
+       "request": {
+           id: '123'     //songid
+       }
+   }
+   {% endhighlight  %}
+3. 响应
+   {% highlight javascript %}
+    {
+        song: {
+                       author = "Avril Lavigne";
+                       count = "50";
+                       id = "1";
+                       image = "http://jjhaudio.hengdianworld.com/images/default.png";
+                       url = "http://jjhaudio.hengdianworld.com/xx.mp3",
+                       listenCount = "1000";
+                       name = "test";
+                       listenPeople: "1100人"，
+                       settings =  {
+                                       canComment = true; 
+                                       maxCommentWord = 20;
+                                    }，
+                       hasAdvImage: true,
+                       advImageUrl: "http://jjhaudio.hengdianworld.com/images/default.png",
+                       advUrl: "http://www.baidu.com",
+                       startTime = "2016-05-19 13:00:00"，
+                       endTime = "2016-05-19 17:00:00"，
+                       type = Live; 
+                }
         status = 0;
         errorMessage = "";
     }
