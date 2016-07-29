@@ -845,7 +845,7 @@ categories: jekyll update
 ===
 获取直播信息的keyword为livedescription
 
-1. URL: http://localhost:3000/user/setnickname
+1. URL: http://localhost:3000/app/getparameterinfo
 2. 请求体
    {% highlight javascript %}
    {
