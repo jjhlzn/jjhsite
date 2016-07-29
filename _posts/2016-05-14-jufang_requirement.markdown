@@ -839,3 +839,27 @@ categories: jekyll update
         errorMessage = "";
     }
   {% endhighlight  %}
+
+
+25)获取配置
+===
+
+1. URL: http://localhost:3000/user/setnickname
+2. 请求体
+   {% highlight javascript %}
+   {
+       "request": {
+           keywords: ['a', 'b', 'c']
+       }
+   }
+   {% endhighlight  %}
+3. 响应
+   {% highlight javascript %}
+    {
+        status = 0;
+        errorMessage = "",
+        result: [{keyword: 'a', value: '1'},
+                 {keyword: 'b', value: '2'},
+                 {keyword: 'c', value: '3'}]
+    }
+  {% endhighlight  %}
