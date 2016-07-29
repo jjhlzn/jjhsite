@@ -843,6 +843,7 @@ categories: jekyll update
 
 25)获取配置
 ===
+获取直播信息的keyword为livedescription
 
 1. URL: http://localhost:3000/user/setnickname
 2. 请求体
