@@ -864,3 +864,26 @@ categories: jekyll update
                  {keyword: 'c', value: '3'}]
     }
   {% endhighlight  %}
+  
+
+  25)直播心跳
+===
+直播页面给服务器发送心跳，为了统计当前在线的人数
+
+1. URL: http://localhost:3000/song/heartbeat
+2. 请求体
+   {% highlight javascript %}
+   {
+       "request": {
+           id:  "11"
+       }
+   }
+   {% endhighlight  %}
+3. 响应
+   {% highlight javascript %}
+    {
+        status = 0;
+        errorMessage = ""
+    }
+  {% endhighlight  %}
+  
