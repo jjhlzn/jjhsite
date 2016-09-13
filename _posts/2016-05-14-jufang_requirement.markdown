@@ -886,4 +886,34 @@ categories: jekyll update
         errorMessage = ""
     }
   {% endhighlight  %}
+
+
+  25)苹果内购支付成功通知
+===
+从ios客户端内购后，需要将支付成功的通知发送给巨方的服务器端。
+sign生成：把productId + payTime + userId + secretKey拼接起来，然后用md5算法产生一个checksum。
+1. URL: http://localhost:3000/app/notifyiap
+2. 请求体
+   {% highlight javascript %}
+   {
+       "request": {
+           productId:  "xxxxxxx",
+           payTime: "2016-09-09 11:11:11",
+           sign: "23232323fdfdfdff"
+       }
+   }
+   {% endhighlight  %}
+3. 响应
+   {% highlight javascript %}
+    {
+        status = 0;   
+        errorMessage = ""
+    }
+  {% endhighlight  %}
+
+
+
+
+
+
   
