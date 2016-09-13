@@ -892,6 +892,7 @@ categories: jekyll update
 ===
 从ios客户端内购后，需要将支付成功的通知发送给巨方的服务器端。
 sign生成：把productId + payTime + userId + secretKey拼接起来，然后用md5算法产生一个checksum。
+
 1. URL: http://localhost:3000/app/notifyiap
 2. 请求体
    {% highlight javascript %}
