@@ -816,6 +816,18 @@ categories: jekyll update
    {% highlight javascript %}
     {
         song: {
+                       album: {
+                            name: 'Dota直播', 
+                            author: 'jjh', 
+                            type: 'Live', 
+                            id: 1000, 
+                            image: 'http://jf.yhkamani.com/upload/201606/03/201606031712080665.png',
+                            count: 50, 
+                            listenCount: '2000人', 
+                            desc: '企业无成本融资！', 
+                            playing: true, 
+                            isReady: true
+                       },
                        author = "Avril Lavigne";
                        count = "50";
                        id = "1";
@@ -912,6 +924,121 @@ sign生成：把productId + payTime + userId + secretKey拼接起来，然后用
     }
   {% endhighlight  %}
 
+26）获取功能消息
+===
+
+1. URL: http://localhost:3000/app/getfunctionmessage
+2. 请求体：
+   {% highlight javascript %}
+   {
+       "request": {
+       }
+   }
+   {% endhighlight  %}
+3. 响应
+   {% highlight javascript %}
+  {
+      status: 0,
+      errorMessage: '',
+      result: [
+        {code: 'f_loan', value: 1},
+        {code: 'f_car', value: 1},
+        {code: 'f_class', value: 0},
+        {code: 'f_user', value: 1}
+      ]
+    }
+   {% endhighlight  %}
+
+27）设置请求功能的消息已读
+===
+
+1. URL:  http://localhost:3000/app/clearfunctionmessage
+2. 请求体:
+   {% highlight javascript %}
+   {
+       "request": {
+           codes: ['f_loan', 'f_car']
+       }
+   }
+   {% endhighlight  %}
+
+3. 响应：
+   {% highlight javascript %}
+  {
+      status: 0,
+      errorMessage: ''
+  }
+  {% endhighlight  %}
+
+28) 获取首页主图信息
+===
+主题的result中的主图的type有两种：song和albumlist, song表示跳转到对应的课，albumlist跳转到课程列表。
+当type为song时，参数songid表示课的id。
+
+1. URL: http://localhost:3000/app/getheaderadvs
+2. 请求体:
+   {% highlight javascript %}
+   {
+       "request": {
+       }
+   }
+   {% endhighlight  %}
+
+3. 响应：
+   {% highlight javascript %}
+  {
+      status: 0,
+      errorMessage: '',
+      result: [
+        {
+          imageUrl: 'http://f.hiphotos.baidu.com/zhidao/pic/item/8b82b9014a90f60326b707453b12b31bb051eda9.jpg',
+          type: 'song',
+          params: [{key: 'songid', value: '10'}]}
+      ]
+    }
+  {% endhighlight  %}
+
+29) 获取首页Footer信息
+===
+
+1. URL: http://localhost:3000/app/getfooteradvs
+2. 请求体:
+   {% highlight javascript %}
+   {
+       "request": {
+       }
+   }
+   {% endhighlight  %}
+
+3. 响应：
+   {% highlight javascript %}
+  {
+      status: 0,
+      errorMessage: '',
+      result: [
+        {
+          imageUrl: 'http://t1.niutuku.com/960/37/37-82841.jpg', //图片url
+          title: '标题1',
+          url: 'http://www.baidu.com'     //web页面的url
+        },
+        {
+          imageUrl: 'http://img1.imgtn.bdimg.com/it/u=2337948598,2469137939&fm=23&gp=0.jpg',
+          title: '标题2',
+          url: 'http://www.sina.com'
+        },
+        {
+          imageUrl: 'http://img0.imgtn.bdimg.com/it/u=1880165282,1993307978&fm=23&gp=0.jpg',
+          title: '标题3',
+          url: 'http://www.youku.com'
+        },
+        {
+          imageUrl: 'http://tupian.enterdesk.com/2013/xll/008/15/6/5.jpg',
+          title: '标题4',
+          url: 'http://www.360.com'
+        }
+      ]
+    }
+  {% endhighlight  %}
 
 
 
